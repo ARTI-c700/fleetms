@@ -15,4 +15,14 @@ public class ApplicationController {
     public String notFound() {
         return "404";
     }
+
+    @GetMapping("/_layout")
+    public String layout() {
+        return "_layout";
+    }
+
+    @GetMapping("/index2")
+    public String index2() {
+        return "index2";
+    }
 }
