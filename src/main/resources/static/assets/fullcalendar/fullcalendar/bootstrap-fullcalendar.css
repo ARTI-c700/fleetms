@@ -126,13 +126,10 @@ html .fc,
 .fc-widget-header {
   background-image: -moz-linear-gradient(top, #fafafa, #efefef);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#efefef));
-  background-image: -o-linear-gradient(top, #fafafa, #efefef);
+    background-image: -webkit-linear-gradient(top, #fafafa, #efefef);
+    background-image: -o-linear-gradient(top, #fafafa, #efefef);
     background-image: linear-gradient(to bottom, #fafafa, #efefef);
   color: #646464;
-}
-
-.fc-widget-header {
-  background-image: -webkit-linear-gradient(top, #fafafa, #efefef);
 }
 
 .fc-widget-header,    /* <th>, usually */
