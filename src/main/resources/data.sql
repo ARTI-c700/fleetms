@@ -1,0 +1,10 @@
+insert into Country values (1, 'US', 'Washington D.C.', 'The United States of America', 'American',     'North America'),
+                           (2, 'FR', 'Paris',           'The French Republic',          'French',       'Europe'),
+                           (3, 'JP', 'Tokyo',           'Japan is an island nation',    'Japanese',     'Asia'),
+                           (4, 'BR', 'Brasília',        'Federate Republic of Brazil',  'Brazilian',    'South America'),
+                           (5, 'AU', 'Canberra',        'Commonwealth of Australia',    'Australian',   'Oceania'),
+                           (6, 'ZA', 'Pretoria',        'Republic of South Africa',     'South African','Africa'),
+                           (7, 'IN', 'New Delhi',       'Republic of India',            'Indian',       'Asia'),
+                           (8, 'DE', 'Berlin',          'Federal Republic of Germany',  'German',       'Europe'),
+                           (9, 'CN', 'Beijing',         'Republic of China',            'Chinese',      'Asia'),
+                           (10, 'RU', 'Moscow',         'Russian Federation',           'Russian',      'Europe/Asia');
