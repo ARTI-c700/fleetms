@@ -5,9 +5,7 @@ import com.finalcourseproject.fleetms.parameters.services.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,9 +31,20 @@ public class CountryController {
         return "/parameters/countryAdd";
     }
 
+    @GetMapping("/countryEdit")
+    public String editCountry(Model model) {
+        return "/parameters/countryEdit";
+    }
+
     @PostMapping("/countries")
     public String save(Country country) {
         countryService.save(country);
+        return "redirect:/countries";
+    }
+
+    @RequestMapping(value = "/countries/delete/{id}", method = {RequestMethod.GET, RequestMethod.DELETE})
+    public String deleteCountry(@PathVariable Integer id) {
+        countryService.delete(id);
         return "redirect:/countries";
     }
 }

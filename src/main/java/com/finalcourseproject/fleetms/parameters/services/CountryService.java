@@ -2,10 +2,10 @@ package com.finalcourseproject.fleetms.parameters.services;
 
 import com.finalcourseproject.fleetms.parameters.models.Country;
 import com.finalcourseproject.fleetms.parameters.repositories.CountryRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CountryService {
@@ -23,5 +23,9 @@ public class CountryService {
 
     public void save(Country country) {
         countryRepository.save(country);
+    }
+
+    public void delete(Integer id) {
+        countryRepository.deleteById(id);
     }
 }
