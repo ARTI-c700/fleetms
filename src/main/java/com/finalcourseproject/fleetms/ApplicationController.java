@@ -56,4 +56,10 @@ public class ApplicationController {
         return "/payroll/index.html";
     }
 
+    // -------------------------------------------------------
+    @GetMapping("/basic_table.html")
+    public String basicTable() {
+        return "/basic_table";
+    }
+
 }
