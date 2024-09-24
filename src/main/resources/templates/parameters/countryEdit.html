@@ -4,18 +4,18 @@
       layout:decorate="_layout">
 
 <body>
-  <div layout:fragment="content">
+<div layout:fragment="content">
 
   <div class="container" style="width: 70%">
 
     <div class="row">
       <form class="form-horizontal " th:action="@{'/countries'}" method="post">
-      <div class="col-lg-10">
-        <section class="panel">
-          <header class="panel-heading">
-            Add A New Country Record
-          </header>
-          <div class="panel-body">
+        <div class="col-lg-10">
+          <section class="panel">
+            <header class="panel-heading">
+              Add A New Country Record
+            </header>
+            <div class="panel-body">
               <div class="form-group">
                 <label class="control-label col-sm-4">Capital</label>
                 <div class="col-sm-5">
@@ -49,20 +49,20 @@
                   <input name="nationality" type="text" class="form-control">
                 </div>
               </div>
-          </div>
-        </section>
-        <section class="panel">
-          <div class="panel-body">
-            <button type="submit" class="btn btn-success">Save Record</button>
-            <a href="/countries" class="btn btn-warning">Exit Without Saving</a>
-          </div>
-        </section>
-      </div>
+            </div>
+          </section>
+          <section class="panel">
+            <div class="panel-body">
+              <button type="submit" class="btn btn-success">Save Record</button>
+              <a href="/countries" class="btn btn-warning">Exit Without Saving</a>
+            </div>
+          </section>
+        </div>
       </form>
     </div>
 
   </div>
 
-  </div>
+</div>
 </body>
 </html>
