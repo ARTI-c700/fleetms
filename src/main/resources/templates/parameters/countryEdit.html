@@ -9,44 +9,42 @@
   <div class="container" style="width: 70%">
 
     <div class="row">
-      <form class="form-horizontal " th:action="@{'/countries'}" method="post">
+      <form class="form-horizontal " th:action="@{'/countries/update/'+${country.id}}" method="put">
         <div class="col-lg-10">
           <section class="panel">
             <header class="panel-heading">
-              Add A New Country Record
+              Edit The Country Record
             </header>
             <div class="panel-body">
               <div class="form-group">
                 <label class="control-label col-sm-4">Capital</label>
                 <div class="col-sm-5">
-                  <input name="Capital" type="text" size="16" class="form-control">
+                  <input name="Capital" th:value="${country.capital}" type="text" size="16" class="form-control">
                 </div>
               </div>
               <div class="form-group">
                 <label class="control-label col-sm-4">Country Code</label>
                 <div class="col-sm-5">
-
-                  <input name="code" class="form-control" size="16" type="text">
-
+                  <input name="code" th:value="${country.code}" class="form-control" size="16" type="text">
                 </div>
               </div>
               <div class="form-group">
                 <label class="control-label col-sm-4"> Continent</label>
                 <div class="col-sm-5">
-                  <input name="continent" type="text" class=" form-control" />
+                  <input name="continent" th:value="${country.continent}" type="text" class=" form-control" />
                 </div>
               </div>
               <div class="form-group">
                 <label class="control-label col-sm-4">Description</label>
                 <div class="col-sm-5">
-                  <input name="description" type="text" class="form-control">
+                  <input name="description" th:value="${country.description}" type="text" class="form-control">
                 </div>
               </div>
               <div class="form-group">
                 <label class="control-label col-sm-4">Nationality</label>
 
                 <div class="col-sm-4">
-                  <input name="nationality" type="text" class="form-control">
+                  <input name="nationality" th:value="${country.nationality}" type="text" class="form-control">
                 </div>
               </div>
             </div>
