@@ -2,7 +2,7 @@ package com.finalcourseproject.fleetms.fleet.models;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import com.finalcourseproject.fleetms.parameters.models.Supplier;
+import com.finalcourseproject.fleetms.parameters.models.Location;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,12 +11,13 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
+
 @Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-public class VehicleMaintenance {
+public class VehicleMovement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -28,16 +29,22 @@ public class VehicleMaintenance {
     private Integer vehicleId;
 
     @ManyToOne
-    @JoinColumn(name = "supplier_id", insertable = false, updatable = false)
-    private Supplier supplier;
-    private Integer supplierId;
+    @JoinColumn(name = "location_id1", insertable = false, updatable = false)
+    private Location location1;
+    private Integer locationId1;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date startDate;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date endDate;
+    private Date date1;
 
-    private String price;
-    private String remarks;
+    @ManyToOne
+    @JoinColumn(name = "location_id2", insertable = false, updatable = false)
+    private Location location2;
+    private Integer locationId2;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date date2;
+
+    private Integer remarks;
+
 
 }
