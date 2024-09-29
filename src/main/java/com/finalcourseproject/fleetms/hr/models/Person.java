@@ -22,7 +22,7 @@ public class Person {
 	private Integer id;
 	private String firstname;
 	private String lastname;
-	private String othername;
+	private String otherName;
 
 	@Formula(value = " concat(firstname, ' ', lastname) ")
 	private String fullName;
@@ -34,14 +34,14 @@ public class Person {
 	private String maritalStatus;
 	
 	@ManyToOne
-	@JoinColumn(name="countryid", insertable=false, updatable=false)
+	@JoinColumn(name="country_id", insertable=false, updatable=false)
 	private Country country;
-	private Integer countryid;
+	private Integer countryId;
 	
 	@ManyToOne
-	@JoinColumn(name="stateid", insertable=false, updatable=false)
+	@JoinColumn(name="state_id", insertable=false, updatable=false)
 	private State state;
-	private Integer stateid;
+	private Integer stateId;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dateOfBirth;
