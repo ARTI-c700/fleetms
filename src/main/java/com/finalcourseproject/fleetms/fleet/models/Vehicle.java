@@ -28,6 +28,8 @@ public class Vehicle {
     @ManyToOne
     @JoinColumn(name="vehicle_type_id", insertable=false, updatable=false)
     private VehicleType vehicleType;
+
+    @Column(name = "vehicle_type_id")
     private Integer vehicleTypeId;
 
     private String vehicleNumber;
@@ -37,18 +39,24 @@ public class Vehicle {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date acquisitionDate;
+
     private String description;
 
     @ManyToOne
     @JoinColumn(name="vehicle_make_id", insertable=false, updatable=false)
     private VehicleMake vehicleMake;
+
+    @Column(name = "vehicle_make_id")
     private Integer vehicleMakeId;
 
     private String power;
     private String fuelCapacity;
+
     @ManyToOne
     @JoinColumn(name="vehicle_status_id", insertable=false, updatable=false)
     private VehicleStatus vehicleStatus;
+
+    @Column(name = "vehicle_status_id")
     private Integer vehicleStatusId;
 
     private String netWeight;
@@ -56,16 +64,22 @@ public class Vehicle {
     @ManyToOne
     @JoinColumn(name="employee_id", insertable=false, updatable=false)
     private Employee inCharge;
+
+    @Column(name = "employee_id")
     private Integer employeeId;
 
     @ManyToOne
     @JoinColumn(name="vehicle_model_id", insertable=false, updatable=false)
     private VehicleModel vehicleModel;
+
+    @Column(name = "vehicle_model_id")
     private Integer vehicleModelId;
 
     @ManyToOne
     @JoinColumn(name="location_id", insertable=false, updatable=false)
     private Location currentLocation;
+
+    @Column(name = "location_id")
     private Integer locationId;
 
     private String remarks;

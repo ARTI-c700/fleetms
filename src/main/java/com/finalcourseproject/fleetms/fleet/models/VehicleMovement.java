@@ -26,19 +26,25 @@ public class VehicleMovement {
     @ManyToOne
     @JoinColumn(name = "vehicle_id", insertable = false, updatable = false)
     private Vehicle vehicle;
+
+    @Column(name = "vehicle_id")
     private Integer vehicleId;
 
     @ManyToOne
-    @JoinColumn(name = "location_id1", insertable = false, updatable = false)
+    @JoinColumn(name = "location_id_1", insertable = false, updatable = false)
     private Location location1;
+
+    @Column(name = "location_id_1")
     private Integer locationId1;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date1;
 
     @ManyToOne
-    @JoinColumn(name = "location_id2", insertable = false, updatable = false)
+    @JoinColumn(name = "location_id_2", insertable = false, updatable = false)
     private Location location2;
+
+    @Column(name = "location_id_2")
     private Integer locationId2;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")

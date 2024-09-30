@@ -1,11 +1,14 @@
 package com.finalcourseproject.fleetms.mailing;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.HashMap;
 import java.util.Map;
 
 
+@Setter
+@Getter
 public abstract class AbstractEmailContext {
     private String from;
     private String to;
@@ -27,88 +30,8 @@ public abstract class AbstractEmailContext {
         // like setting up some base URL and context
     }
 
-    public String getFrom() {
-        return from;
-    }
-
-    public void setFrom(String from) {
-        this.from = from;
-    }
-
-    public String getTo() {
-        return to;
-    }
-
-    public void setTo(String to) {
-        this.to = to;
-    }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Map<String, Object> getContext() {
-        return context;
-    }
-
     public Object put(String key, Object value) {
         return key == null ? null : this.context.put(key.intern(), value);
-    }
-
-    public String getTemplateLocation() {
-        return templateLocation;
-    }
-
-    public void setTemplateLocation(String templateLocation) {
-        this.templateLocation = templateLocation;
-    }
-
-    public void setContext(Map<String, Object> context) {
-        this.context = context;
-    }
-
-    public String getAttachment() {
-        return attachment;
-    }
-
-    public void setAttachment(String attachment) {
-        this.attachment = attachment;
-    }
-
-    public String getFromDisplayName() {
-        return fromDisplayName;
-    }
-
-    public void setFromDisplayName(String fromDisplayName) {
-        this.fromDisplayName = fromDisplayName;
-    }
-
-    public String getEmailLanguage() {
-        return emailLanguage;
-    }
-
-    public void setEmailLanguage(String emailLanguage) {
-        this.emailLanguage = emailLanguage;
-    }
-
-    public String getDisplayName() {
-        return displayName;
-    }
-
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
     }
 
 

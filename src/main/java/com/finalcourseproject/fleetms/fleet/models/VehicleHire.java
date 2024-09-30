@@ -23,6 +23,8 @@ public class VehicleHire {
     @ManyToOne
     @JoinColumn(name = "vehicle_id", insertable = false, updatable = false)
     private Vehicle vehicle;
+
+    @Column(name = "vehicle_id")
     private Integer vehicleId;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -36,11 +38,15 @@ public class VehicleHire {
     @ManyToOne
     @JoinColumn(name = "client_id", insertable = false, updatable = false)
     private Client client;
+
+    @Column(name = "client_id")
     private Integer clientId;
 
     @ManyToOne
     @JoinColumn(name = "location_id", insertable = false, updatable = false)
     private Location location;
+
+    @Column(name = "location_id")
     private Integer locationId;
 
     private String price;

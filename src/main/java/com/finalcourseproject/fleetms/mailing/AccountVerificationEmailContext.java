@@ -1,12 +1,10 @@
-package com.kindsonthegenius.fleetmsv2.mailing;
+package com.finalcourseproject.fleetms.mailing;
 
 
-import com.finalcourseproject.fleetms.mailing.AbstractEmailContext;
 import com.finalcourseproject.fleetms.security.models.User;
 import org.springframework.web.util.UriComponentsBuilder;
 
 public class AccountVerificationEmailContext extends AbstractEmailContext {
-    private String token;
 
     @Override
     public <T> void init(T context) {
@@ -21,7 +19,6 @@ public class AccountVerificationEmailContext extends AbstractEmailContext {
     }
 
     public void setToken(String token) {
-        this.token = token;
         put("token", token);
     }
 

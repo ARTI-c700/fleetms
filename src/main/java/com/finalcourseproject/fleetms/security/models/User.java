@@ -1,6 +1,5 @@
 package com.finalcourseproject.fleetms.security.models;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -43,6 +42,4 @@ public class User extends Auditable<String> {
     public boolean isLoginDisabled() {
         return loginDisabled;
     }
-
-
 }

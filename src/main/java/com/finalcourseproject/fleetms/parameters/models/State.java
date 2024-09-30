@@ -22,10 +22,11 @@ public class State {
     private String code;
 
 	@ManyToOne
-	@JoinColumn(name="countryid", insertable=false, updatable=false)
+	@JoinColumn(name="country_id", insertable=false, updatable=false)
 	private Country country;
-	
-	private Integer countryid;
+
+	@Column(name = "country_id")
+	private Integer countryId;
 	
 	private String details;
 	

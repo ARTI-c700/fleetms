@@ -2,6 +2,7 @@ package com.finalcourseproject.fleetms.hr.models;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -20,14 +21,18 @@ public class Employee extends Person {
 	@ManyToOne
 	@JoinColumn(name="employeetypeid", insertable=false, updatable=false)
 	private EmployeeType employeeType;
-	private Integer employeetypeid;
+
+	@Column(name = "employee_type_id")
+	private Integer employeeTypeId;
 	private String photo;
 	private String username;
 	
 	@ManyToOne
 	@JoinColumn(name="jobtitleid", insertable=false, updatable=false)
 	private JobTitle jobTitle;
-	private Integer jobtitleid;
+
+	@Column(name = "job_title_id")
+	private Integer jobTitleId;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date hireDate;

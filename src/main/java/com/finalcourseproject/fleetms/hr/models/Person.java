@@ -36,11 +36,15 @@ public class Person {
 	@ManyToOne
 	@JoinColumn(name="country_id", insertable=false, updatable=false)
 	private Country country;
+
+	@Column(name = "country_id")
 	private Integer countryId;
 	
 	@ManyToOne
 	@JoinColumn(name="state_id", insertable=false, updatable=false)
 	private State state;
+
+	@Column(name = "state_id")
 	private Integer stateId;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")

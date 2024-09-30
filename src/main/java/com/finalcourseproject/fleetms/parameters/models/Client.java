@@ -28,14 +28,18 @@ public class Client {
 	private String email;
 	
 	@ManyToOne
-	@JoinColumn(name="countryid", insertable=false, updatable=false)
+	@JoinColumn(name="country_id", insertable=false, updatable=false)
 	private Country country;
-	private Integer countryid;
+
+	@Column(name = "country_id")
+	private Integer countryId;
 	
 	@ManyToOne
-	@JoinColumn(name="stateid", insertable=false, updatable=false)
+	@JoinColumn(name="state_id", insertable=false, updatable=false)
 	private State state;
-	private Integer stateid;
+
+	@Column(name = "state_id")
+	private Integer stateId;
 	
 	private String details;
 }

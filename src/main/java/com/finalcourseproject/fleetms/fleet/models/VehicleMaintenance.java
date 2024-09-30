@@ -25,11 +25,15 @@ public class VehicleMaintenance {
     @ManyToOne
     @JoinColumn(name = "vehicle_id", insertable = false, updatable = false)
     private Vehicle vehicle;
+
+    @Column(name = "vahicle_id")
     private Integer vehicleId;
 
     @ManyToOne
     @JoinColumn(name = "supplier_id", insertable = false, updatable = false)
     private Supplier supplier;
+
+    @Column(name = "supplier_id")
     private Integer supplierId;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")

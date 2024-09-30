@@ -22,14 +22,19 @@ public class Invoice {
     @ManyToOne
     @JoinColumn(name = "invoice_status_id", insertable = false, updatable = false)
     private InvoiceStatus invoiceStatus;
-    private Integer InvoiceStatusId;
+
+    @Column(name = "invoice_status_id")
+    private Integer invoiceStatusId;
 
     @Getter
     @Setter
     @ManyToOne
     @JoinColumn(name = "client_id", insertable = false, updatable = false)
     private Client client;
+
+    @Column(name = "client_id")
     private Integer clientId;
+
     private String remarks;
 
 }

@@ -21,5 +21,7 @@ public class Department {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "manager_id", insertable = false, updatable = false)
     private Employee manager;
-    private Integer manageId;
+
+    @Column(name = "manager_id")
+    private Integer managerId;
 }

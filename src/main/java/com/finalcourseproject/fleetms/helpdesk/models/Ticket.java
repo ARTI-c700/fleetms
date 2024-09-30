@@ -1,10 +1,7 @@
 package com.finalcourseproject.fleetms.helpdesk.models;
 
 import com.finalcourseproject.fleetms.hr.models.Employee;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -32,16 +29,22 @@ public class Ticket {
     @ManyToOne
     @JoinColumn(name = "ticket_status_id", insertable = false, updatable = false)
     private TicketStatus ticketStatus;
+
+    @Column(name = "ticket_status_id")
     private Integer ticketStatusId;
 
     @ManyToOne
     @JoinColumn(name = "raised_by_id", insertable = false, updatable = false)
     private Employee raisedBy;
+
+    @Column(name = "raised_by_id")
     private Integer raisedById;
 
     @ManyToOne
     @JoinColumn(name = "assigned_to", insertable = false, updatable = false)
     private Employee assignedTo;
+
+    @Column(name = "assigned_to_id")
     private Integer assignedToId;
 
     private String remarks;
