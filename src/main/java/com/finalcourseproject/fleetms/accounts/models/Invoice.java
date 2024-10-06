@@ -1,14 +1,19 @@
 package com.finalcourseproject.fleetms.accounts.models;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.finalcourseproject.fleetms.parameters.models.Client;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
+@Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Invoice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
