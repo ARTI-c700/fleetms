@@ -2,7 +2,6 @@ package com.finalcourseproject.fleetms.accounts.controllers;
 
 import com.finalcourseproject.fleetms.accounts.models.InvoiceStatus;
 import com.finalcourseproject.fleetms.accounts.services.InvoiceStatusService;
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -10,15 +9,18 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@AllArgsConstructor
 public class InvoiceStatusController {
     private final InvoiceStatusService invoiceStatusService;
 
-    @PostMapping("/accounts/invoiceStatuses")
+    public InvoiceStatusController(InvoiceStatusService invoiceStatusService) {
+        this.invoiceStatusService = invoiceStatusService;
+    }
+
+    @GetMapping("/accounts/invoiceStatuses")
     public String getAllInvoiceStatuses(Model model) {
         List<InvoiceStatus> invoiceStatusList = invoiceStatusService.getAll();
         model.addAttribute("invoiceStatuses", invoiceStatusList);
-        return "accounts/invoiceStatuses";
+        return "/accounts/invoiceStatuses";
     }
 
     @RequestMapping("/accounts/invoiceStatus/{id}")

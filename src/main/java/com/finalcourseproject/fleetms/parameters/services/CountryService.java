@@ -5,7 +5,6 @@ import com.finalcourseproject.fleetms.parameters.repositories.CountryRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class CountryService {
@@ -17,7 +16,7 @@ public class CountryService {
         this.countryRepository = countryRepository;
     }
 
-    public List<Country> getAll() {
+    public List<Country> findAllCountries() {
         return countryRepository.findAll();
     }
 

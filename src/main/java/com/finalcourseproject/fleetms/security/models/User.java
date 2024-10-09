@@ -1,10 +1,7 @@
 package com.finalcourseproject.fleetms.security.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -26,6 +23,7 @@ public class User extends Auditable<String> {
     private String password;
     private String email;
     private boolean accountVerified;
+    @Getter
     private boolean loginDisabled;
 
     @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
@@ -39,7 +37,4 @@ public class User extends Auditable<String> {
     @OneToMany(mappedBy = "user")
     private Set<SecureToken> tokens;
 
-    public boolean isLoginDisabled() {
-        return loginDisabled;
-    }
 }

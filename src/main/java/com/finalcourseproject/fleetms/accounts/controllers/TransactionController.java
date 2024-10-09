@@ -10,7 +10,7 @@ import com.finalcourseproject.fleetms.parameters.services.ContactService;
 import com.finalcourseproject.fleetms.parameters.services.SupplierService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -35,18 +35,18 @@ public class TransactionController {
     }
 
     public Model addModelAttributes(Model model){
-        model.addAttribute("transactionStatuses", transactionStatusService.findAll());
+        model.addAttribute("transactionStatuses", transactionStatusService.getAll());
         model.addAttribute("transactionTypes", transactionTypeService.findAll());
-        model.addAttribute("contacts", contactService.findAll());
+        model.addAttribute("contacts", contactService.findAllContacts());
         model.addAttribute("suppliers", supplierService.findAll());
-        model.addAttribute("clients", clientService.findAll());
+        model.addAttribute("clients", clientService.findAllClients());
         model.addAttribute("employees", employeeService.findAll());
         return model;
     }
 
     @GetMapping("/accounts/transactions")
     public String  getAll(Model model){
-        List<Transaction> transactions =   transactionService.findAll();
+        List<Transaction> transactions =   transactionService.getAll();
         model.addAttribute("transactions", transactions);
         addModelAttributes(model);
         return "/accounts/transactions";
@@ -61,7 +61,7 @@ public class TransactionController {
     //The op parameter is either Edit or Details
     @GetMapping("/accounts/transaction/{op}/{id}")
     public String editTransaction(@PathVariable Integer id, @PathVariable String op, Model model){
-        Transaction transaction = transactionService.findById(id);
+        Transaction transaction = transactionService.getById(id);
         model.addAttribute("transaction", transaction);
         addModelAttributes(model);
         return "/accounts/transaction"+ op;
