@@ -8,6 +8,8 @@ import com.finalcourseproject.fleetms.hr.services.*;
 import com.finalcourseproject.fleetms.parameters.services.ClientService;
 import com.finalcourseproject.fleetms.parameters.services.ContactService;
 import com.finalcourseproject.fleetms.parameters.services.SupplierService;
+
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@AllArgsConstructor
 public class TransactionController {
     private final TransactionService transactionService;
     private final TransactionStatusService transactionStatusService;
@@ -23,16 +26,6 @@ public class TransactionController {
     private final SupplierService supplierService;
     private final ClientService clientService;
     private final EmployeeService employeeService;
-
-    public TransactionController(TransactionService transactionService, TransactionStatusService transactionStatusService, TransactionTypeService transactionTypeService, ContactService contactService, SupplierService supplierService, ClientService clientService, EmployeeService employeeService) {
-        this.transactionService = transactionService;
-        this.transactionStatusService = transactionStatusService;
-        this.transactionTypeService = transactionTypeService;
-        this.contactService = contactService;
-        this.supplierService = supplierService;
-        this.clientService = clientService;
-        this.employeeService = employeeService;
-    }
 
     public Model addModelAttributes(Model model){
         model.addAttribute("transactionStatuses", transactionStatusService.getAll());

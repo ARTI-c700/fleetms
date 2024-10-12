@@ -8,12 +8,14 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.With;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
 @Entity
 @Data
+@With
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")

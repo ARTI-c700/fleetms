@@ -4,6 +4,7 @@ import com.finalcourseproject.fleetms.accounts.models.Invoice;
 import com.finalcourseproject.fleetms.accounts.services.InvoiceService;
 import com.finalcourseproject.fleetms.accounts.services.InvoiceStatusService;
 import com.finalcourseproject.fleetms.parameters.services.ClientService;
+
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,17 +13,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@AllArgsConstructor
 public class InvoiceController {
 
     private final InvoiceService invoiceService;
     private final InvoiceStatusService invoiceStatusService;
     private final ClientService clientService;
-
-    public InvoiceController(InvoiceService invoiceService, InvoiceStatusService invoiceStatusService, ClientService clientService) {
-        this.clientService = clientService;
-        this.invoiceStatusService = invoiceStatusService;
-        this.invoiceService = invoiceService;
-    }
 
     @GetMapping("/accounts/invoices")
     public String getAllInvoices(Model model) {
