@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class Role extends Auditable<String> {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private String id;
+    private Integer id;
 
     private String description;
     private String details;

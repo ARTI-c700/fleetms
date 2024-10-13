@@ -14,19 +14,19 @@ public class LocationService {
         this.locationRepository = locationRepository;
     }
 
-    public List<Location> findAll() {
+    public List<Location> findAllLocations() {
         return (List<Location>) locationRepository.findAll();
     }
 
-    public Location findById(Integer id) {
+    public Location findLocation(Integer id) {
         return locationRepository.findById(id).orElse(null);
     }
 
-    public void save(Location location) {
+    public void saveLocation(Location location) {
         locationRepository.save(location);
     }
 
-    public void deleteById(Integer id) {
+    public void deleteLocation(Integer id) {
         locationRepository.deleteById(id);
     }
 

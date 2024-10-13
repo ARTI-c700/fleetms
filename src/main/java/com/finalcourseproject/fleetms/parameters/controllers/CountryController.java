@@ -2,6 +2,7 @@ package com.finalcourseproject.fleetms.parameters.controllers;
 
 import com.finalcourseproject.fleetms.parameters.models.Country;
 import com.finalcourseproject.fleetms.parameters.services.CountryService;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -36,7 +37,7 @@ public class CountryController {
 
     @GetMapping("/countries/edit/{id}")
     public String editCountry(@PathVariable Integer id, Model model) {
-        Country country = countryService.getById(id);
+        Country country = countryService.findCountry(id);
         model.addAttribute("country", country);
 
         return "/parameters/countryEdit";
@@ -44,19 +45,19 @@ public class CountryController {
 
     @PostMapping("/countries")
     public String save(Country country) {
-        countryService.save(country);
+        countryService.saveCountry(country);
         return "redirect:/countries";
     }
 
     @RequestMapping(value = "/countries/delete/{id}", method = {RequestMethod.GET, RequestMethod.DELETE})
     public String deleteCountry(@PathVariable Integer id) {
-        countryService.delete(id);
+        countryService.deleteCountry(id);
         return "redirect:/countries";
     }
 
     @RequestMapping(value = "/countries/update/{id}", method = {RequestMethod.GET, RequestMethod.PUT})
     public String updateCountry(Country country) {
-        countryService.save(country);
+        countryService.saveCountry(country);
         return "redirect:/countries";
     }
 }

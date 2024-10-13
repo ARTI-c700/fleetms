@@ -27,14 +27,13 @@ public class TransactionController {
     private final ClientService clientService;
     private final EmployeeService employeeService;
 
-    public Model addModelAttributes(Model model){
+    public void addModelAttributes(Model model){
         model.addAttribute("transactionStatuses", transactionStatusService.getAll());
         model.addAttribute("transactionTypes", transactionTypeService.findAll());
         model.addAttribute("contacts", contactService.findAllContacts());
-        model.addAttribute("suppliers", supplierService.findAll());
+        model.addAttribute("suppliers", supplierService.findAllSuppliers());
         model.addAttribute("clients", clientService.findAllClients());
-        model.addAttribute("employees", employeeService.findAll());
-        return model;
+        model.addAttribute("employees", employeeService.findAllEmployees());
     }
 
     @GetMapping("/accounts/transactions")

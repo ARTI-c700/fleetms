@@ -40,7 +40,7 @@ public class ClientController {
 
     @GetMapping("/parameters/client/{op}/{id}")
     public String editClient(@PathVariable Integer id, @PathVariable String op, Model model) {
-        Client client = clientService.findClientById(id);
+        Client client = clientService.findClient(id);
         model.addAttribute("client", client);
         addModelAttributes(model);
 
@@ -56,7 +56,7 @@ public class ClientController {
 
     @RequestMapping(value = "/parameters/clients/delete/{id}", method = {RequestMethod.DELETE, RequestMethod.GET})
     public String deleteById(@PathVariable Integer id) {
-        clientService.deleteClientById(id);
+        clientService.deleteClient(id);
         return "redirect:/parameters/clients";
     }
 }

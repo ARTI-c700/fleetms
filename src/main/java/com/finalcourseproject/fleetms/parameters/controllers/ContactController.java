@@ -26,7 +26,7 @@ public class ContactController {
     @GetMapping("/parameters/contact/{id}")
     @ResponseBody
     public Contact getContact(@PathVariable Integer id) {
-        return contactService.findContactById(id);
+        return contactService.findContact(id);
     }
 
     @GetMapping("/parameters/contactAdd")
@@ -37,7 +37,7 @@ public class ContactController {
     //The op parameter is either Edit or Details
     @GetMapping("/parameters/contact/{op}/{id}")
     public String editContact(@PathVariable Integer id, @PathVariable String op, Model model){
-        Contact contact = contactService.findContactById(id);
+        Contact contact = contactService.findContact(id);
         model.addAttribute("contact", contact);
         return "/parameters/contact"+ op;
     }

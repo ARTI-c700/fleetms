@@ -20,16 +20,15 @@ public class VehicleController {
     private final EmployeeService employeeService;
     private final VehicleStatusService vehicleStatusService;
 
-    public Model addModelAttributes(Model model) {
+    public void addModelAttributes(Model model) {
         model.addAttribute("vehicles", vehicleService.getAll());
         model.addAttribute("vehicleTypes", vehicleTypeService.findAll());
         model.addAttribute("vehicleMakes", vehicleMakeService.findAll());
         model.addAttribute("vehicleModels", vehicleModelService.findAll());
-        model.addAttribute("locations", locationService.findAll());
-        model.addAttribute("employees", employeeService.findAll());
+        model.addAttribute("locations", locationService.findAllLocations());
+        model.addAttribute("employees", employeeService.findAllEmployees());
         model.addAttribute("vehicleStatus", vehicleStatusService.findAll());
 
-        return model;
     }
 
     // Get all vehicles

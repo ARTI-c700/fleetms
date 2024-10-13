@@ -36,7 +36,7 @@ public class StateController {
 
     @GetMapping("/parameters/states/edit/{id}")
     public String editCountry(@PathVariable Integer id, Model model) {
-        State state = stateService.findById(id);
+        State state = stateService.findState(id);
         model.addAttribute("stateEdit", state);
 
         return "/parameters/stateEdit";
@@ -44,19 +44,19 @@ public class StateController {
 
     @PostMapping("/parameters/states")
     public String save(State state) {
-        stateService.save(state);
+        stateService.saveState(state);
         return "redirect:/parameters/states";
     }
 
     @RequestMapping(value = "/parameters/states/delete/{id}", method = {RequestMethod.GET, RequestMethod.DELETE})
     public String deleteCountry(@PathVariable Integer id) {
-        stateService.delete(id);
+        stateService.deleteState(id);
         return "redirect:/parameters/states/";
     }
 
     @RequestMapping(value = "/parameters/states/update/{id}", method = {RequestMethod.GET, RequestMethod.PATCH})
     public String updateCountry(State state, @PathVariable Integer id) {
-        stateService.save(state);
+        stateService.saveState(state);
         return "redirect:/parameters/states/";
     }
 }

@@ -17,13 +17,13 @@ public class ClientService {
         return clientRepository.findAll();
     }
 
-    //Get Client By Id
-    public Client findClientById(int id) {
+    //Get Client By id
+    public Client findClient(int id) {
         return clientRepository.findById(id).orElse(null);
     }
 
     //Delete Client
-    public void deleteClientById(int id) {
+    public void deleteClient(int id) {
         clientRepository.deleteById(id);
     }
 

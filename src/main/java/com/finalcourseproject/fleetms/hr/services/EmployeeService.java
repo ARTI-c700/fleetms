@@ -15,32 +15,32 @@ public class EmployeeService {
     }
 
     //Get All Employees
-    public List<Employee> findAll(){
+    public List<Employee> findAllEmployees(){
         return employeeRepository.findAll();
     }
 
     //Get Employee By Id
-    public Employee findById(int id) {
+    public Employee findEmployee(int id) {
         return employeeRepository.findById(id).orElse(null);
     }
 
     //Delete Employee
-    public void delete(int id) {
+    public void deleteEmployee(int id) {
         employeeRepository.deleteById(id);
     }
 
     //Update Employee
-    public void save( Employee employee) {
+    public void saveEmployee(Employee employee) {
         employeeRepository.save(employee);
     }
 
     //Get Employee by username
-    public Employee findByUsername(String un) {
+    public Employee findEmployee(String un) {
         return employeeRepository.findByUsername(un);
     }
 
     //Get employee by Keyword
-    public List<Employee> findByKeyword(String keyword) {
+    public List<Employee> findEmployeeByKeyword(String keyword) {
         return employeeRepository.findByKeyword(keyword);
     }
 }

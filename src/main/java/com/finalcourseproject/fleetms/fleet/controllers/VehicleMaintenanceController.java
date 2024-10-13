@@ -17,10 +17,9 @@ public class VehicleMaintenanceController {
     private final VehicleService vehicleService;
     private final SupplierService supplierService;
 
-    public Model addModelAttributes(Model model){
+    public void addModelAttributes(Model model) {
         model.addAttribute("vehicles", vehicleService.getAll());
-        model.addAttribute("suppliers", supplierService.findAll());
-        return model;
+        model.addAttribute("suppliers", supplierService.findAllSuppliers());
     }
 
     //Get All VehicleMaintenances

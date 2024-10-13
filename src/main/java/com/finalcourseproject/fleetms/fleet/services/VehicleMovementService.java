@@ -14,19 +14,19 @@ public class VehicleMovementService {
         this.vehicleMovementRepository = vehicleMovementRepository;
     }
 
-    public List<VehicleMovement> getAll() {
+    public List<VehicleMovement> findAllMovements() {
         return vehicleMovementRepository.findAll();
     }
 
-    public void save(VehicleMovement vehicle) {
+    public void saveMovement(VehicleMovement vehicle) {
         vehicleMovementRepository.save(vehicle);
     }
 
-    public void delete(Integer id) {
+    public void deleteMovement(Integer id) {
         vehicleMovementRepository.deleteById(id);
     }
 
-    public VehicleMovement getById(Integer id) {
+    public VehicleMovement findMovement(Integer id) {
         return vehicleMovementRepository.findById(id).orElse(null);
     }
 

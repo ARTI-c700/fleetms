@@ -1,5 +1,6 @@
 package com.finalcourseproject.fleetms.security.models;
 
+import java.util.Date;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.Temporal;
@@ -12,25 +13,24 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.util.Date;
+import static jakarta.persistence.TemporalType.TIMESTAMP;
 
 @Setter
 @Getter
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public class Auditable<U> {
+public abstract class Auditable<U> {
     @CreatedBy
     protected U createdBy;
 
     @CreatedDate
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TIMESTAMP)
     protected Date createdDate;
 
     @LastModifiedBy
     protected U lastModifiedBy;
 
     @LastModifiedDate
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TIMESTAMP)
     protected Date lastModifiedDate;
-
 }

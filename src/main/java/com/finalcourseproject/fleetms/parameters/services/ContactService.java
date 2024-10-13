@@ -20,7 +20,7 @@ public class ContactService {
     }
 
     //Get Contact By id
-    public Contact findContactById(int id) {
+    public Contact findContact(int id) {
         return contactRepository.findById(id).orElse(null);
     }
 

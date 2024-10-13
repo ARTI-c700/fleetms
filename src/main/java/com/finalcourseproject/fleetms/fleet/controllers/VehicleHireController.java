@@ -19,11 +19,10 @@ public class VehicleHireController {
     private final LocationService locationService;
     private final VehicleService vehicleService;
 
-    public Model addModelAttributes(Model model){
+    public void addModelAttributes(Model model) {
         model.addAttribute("clients", clientService.findAllClients());
-        model.addAttribute("locations", locationService.findAll());
+        model.addAttribute("locations", locationService.findAllLocations());
         model.addAttribute("vehicles", vehicleService.getAll());
-        return model;
     }
 
     //Get All VehicleHires

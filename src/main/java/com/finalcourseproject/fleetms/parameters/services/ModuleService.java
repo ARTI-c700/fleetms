@@ -14,19 +14,19 @@ public class ModuleService {
         this.moduleRepository = moduleRepository;
     }
 
-    public List<Module> findAll() {
+    public List<Module> findAllModules() {
         return moduleRepository.findAll();
     }
 
-    public Module findById(Integer id) {
+    public Module findModule(Integer id) {
         return moduleRepository.findById(id).orElse(null);
     }
 
-    public void save(Module location) {
+    public void saveModule(Module location) {
         moduleRepository.save(location);
     }
 
-    public void deleteById(Integer id) {
+    public void deleteModuleById(Integer id) {
         moduleRepository.deleteById(id);
     }
 }

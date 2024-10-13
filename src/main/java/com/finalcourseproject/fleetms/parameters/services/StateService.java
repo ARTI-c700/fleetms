@@ -19,17 +19,17 @@ public class StateService {
     }
 
     //Get State By Id
-    public State findById(int id) {
+    public State findState(int id) {
         return stateRepository.findById(id).orElse(null);
     }
 
     //Delete State
-    public void delete(int id) {
+    public void deleteState(int id) {
         stateRepository.deleteById(id);
     }
 
     //Update State
-    public void save( State state) {
+    public void saveState( State state) {
         stateRepository.save(state);
     }
 }
