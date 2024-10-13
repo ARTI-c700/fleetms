@@ -17,7 +17,6 @@ import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.util.StringUtils;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -84,7 +83,7 @@ public class UserService {
         }
     }
 
-    public boolean verifyUser(String token) throws InvalidTokenException {
+    public void verifyUser(String token) throws InvalidTokenException {
         SecureToken secureToken = secureTokenService.findByToken(token);
         boolean isTokenNull = Objects.isNull(secureToken);
         boolean isTokenExpired = secureToken.isExpired();
@@ -101,12 +100,11 @@ public class UserService {
         }
 
         User user = userRepository.findByEmail(secureToken.getUser().getEmail());
-        if (Objects.isNull(user)) return false;
+        if (Objects.isNull(user)) return;
 
         user.setAccountVerified(true);
         userRepository.save(user);
 
         secureTokenService.removeToken(secureToken);
-        return true;
     }
 }

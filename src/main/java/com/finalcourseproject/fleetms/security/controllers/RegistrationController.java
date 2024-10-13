@@ -21,7 +21,7 @@ public class RegistrationController {
     @GetMapping("/verify")
     public String verifyUser(@RequestParam String token, RedirectAttributes redirectAttributes) {
         if (StringUtils.isEmpty(token)) {
-            redirectAttributes.addFlashAttribute("tokenError", "Token is invlid");
+            redirectAttributes.addFlashAttribute("tokenError", "Token is invalid");
             return REDIRECT_LOGIN;
         }
         try {
