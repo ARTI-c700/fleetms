@@ -8,9 +8,7 @@ public class AccountVerificationEmailContext extends AbstractEmailContext {
 
     @Override
     public <T> void init(T context) {
-        //we can do any common configuration setup here
-        // like setting up some base URL and context
-        User user = (User) context; // we pass the customer information
+        User user = (User) context;
         put("firstName", user.getFirstname());
         setTemplateLocation("mailing/email-verification");
         setSubject("Complete your registration");
