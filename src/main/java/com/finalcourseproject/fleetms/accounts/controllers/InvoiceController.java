@@ -50,5 +50,4 @@ public class InvoiceController {
         invoiceService.deleteInvoice(id);
         return "redirect:/accounts/invoices";
     }
-
 }

@@ -35,7 +35,7 @@ public class CountryController {
         return "/parameters/countryEdit";
     }
 
-    @GetMapping("/countries/edit/{id}")
+    @GetMapping("/countries/edit-{id}")
     public String editCountry(@PathVariable Integer id, Model model) {
         Country country = countryService.findCountry(id);
         model.addAttribute("country", country);

@@ -3,6 +3,7 @@ package com.finalcourseproject.fleetms.accounts.controllers;
 import com.finalcourseproject.fleetms.accounts.models.TransactionStatus;
 import com.finalcourseproject.fleetms.accounts.services.TransactionStatusService;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class TransactionStatusController {
     private final TransactionStatusService transactionStatusService;
 
